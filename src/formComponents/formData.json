@@ -1,0 +1,193 @@
+{
+  "id": "2f50daee-e481-493d-b945-6b327d2b955e",
+  "stages": {
+    "910e9602-2eba-410d-9703-27488f20f518": {
+      "children": [
+        "0d827846-9eaa-4ccc-a3aa-19b9732a51a8",
+        "4ce55958-cc7b-4637-9a90-4f9827c4a80e",
+        "31e7acdb-452d-41f6-821e-c7ccc64fac36",
+        "9945ef94-dcbf-443d-a50f-fe00df4b3e5f"
+      ],
+      "id": "910e9602-2eba-410d-9703-27488f20f518"
+    }
+  },
+  "rows": {
+    "0d827846-9eaa-4ccc-a3aa-19b9732a51a8": {
+      "config": { "fieldset": false, "legend": "", "inputGroup": false },
+      "children": ["7102df9a-2611-4843-aef6-ca9fb8852cd5"],
+      "className": ["formeo-row"],
+      "id": "0d827846-9eaa-4ccc-a3aa-19b9732a51a8"
+    },
+    "4ce55958-cc7b-4637-9a90-4f9827c4a80e": {
+      "config": { "fieldset": false, "legend": "", "inputGroup": false },
+      "children": ["c12c690e-0b4e-4c5b-8d61-26c17c9722b4"],
+      "className": ["formeo-row"],
+      "id": "4ce55958-cc7b-4637-9a90-4f9827c4a80e"
+    },
+    "31e7acdb-452d-41f6-821e-c7ccc64fac36": {
+      "config": { "fieldset": false, "legend": "", "inputGroup": false },
+      "children": ["17c4e1a1-be78-4466-9c7b-4ffcbee15e6b"],
+      "className": ["formeo-row"],
+      "id": "31e7acdb-452d-41f6-821e-c7ccc64fac36"
+    },
+    "9945ef94-dcbf-443d-a50f-fe00df4b3e5f": {
+      "config": { "fieldset": false, "legend": "", "inputGroup": false },
+      "children": ["939f7388-a1e2-4cf1-872b-0d3bf2411159"],
+      "className": ["formeo-row"],
+      "id": "9945ef94-dcbf-443d-a50f-fe00df4b3e5f"
+    }
+  },
+  "columns": {
+    "7102df9a-2611-4843-aef6-ca9fb8852cd5": {
+      "config": { "width": "100%" },
+      "children": ["eaa25858-9e3c-4a9b-9b00-a91c6eeb5c95"],
+      "className": "formeo-column",
+      "id": "7102df9a-2611-4843-aef6-ca9fb8852cd5"
+    },
+    "c12c690e-0b4e-4c5b-8d61-26c17c9722b4": {
+      "config": { "width": "100%" },
+      "children": ["6bfa9da5-3621-4b52-99e9-aa2d4d24e373"],
+      "className": "formeo-column",
+      "id": "c12c690e-0b4e-4c5b-8d61-26c17c9722b4"
+    },
+    "17c4e1a1-be78-4466-9c7b-4ffcbee15e6b": {
+      "config": { "width": "100%" },
+      "children": ["d6d68d27-6327-40f2-84d9-ff8c8d73a978"],
+      "className": "formeo-column",
+      "id": "17c4e1a1-be78-4466-9c7b-4ffcbee15e6b"
+    },
+    "939f7388-a1e2-4cf1-872b-0d3bf2411159": {
+      "config": { "width": "100%" },
+      "children": ["dfeada4c-ac60-4996-816c-bbdd10b3a49d"],
+      "className": "formeo-column",
+      "id": "939f7388-a1e2-4cf1-872b-0d3bf2411159"
+    }
+  },
+  "fields": {
+    "eaa25858-9e3c-4a9b-9b00-a91c6eeb5c95": {
+      "conditions": [],
+      "tag": "input",
+      "attrs": { "type": "radio", "required": false },
+      "config": { "label": "Are you vaccinated?", "disabledAttrs": ["type"] },
+      "meta": { "group": "common", "icon": "radio-group", "id": "radio" },
+      "options": [
+        { "label": "Yes", "value": "yes", "selected": false },
+        { "label": "No", "value": "no", "selected": false }
+      ],
+      "id": "eaa25858-9e3c-4a9b-9b00-a91c6eeb5c95"
+    },
+    "6bfa9da5-3621-4b52-99e9-aa2d4d24e373": {
+      "conditions": [
+        {
+          "if": [
+            {
+              "source": "fields.eaa25858-9e3c-4a9b-9b00-a91c6eeb5c95",
+              "sourceProperty": "value",
+              "comparison": "equals",
+              "target": "no",
+              "targetProperty": "value"
+            }
+          ],
+          "then": [
+            {
+              "target": "",
+              "targetProperty": "value",
+              "assignment": "equals",
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "tag": "input",
+      "attrs": { "type": "radio", "required": false },
+      "config": {
+        "label": "if no, are you planning to?",
+        "disabledAttrs": ["type"]
+      },
+      "meta": { "group": "common", "icon": "radio-group", "id": "radio" },
+      "options": [
+        { "label": "Yes", "value": "yes", "selected": false },
+        { "label": "No", "value": "no", "selected": false }
+      ],
+      "id": "6bfa9da5-3621-4b52-99e9-aa2d4d24e373"
+    },
+    "d6d68d27-6327-40f2-84d9-ff8c8d73a978": {
+      "conditions": [
+        {
+          "if": [
+            {
+              "source": "",
+              "sourceProperty": "value",
+              "comparison": "equals",
+              "target": "",
+              "targetProperty": "value"
+            }
+          ],
+          "then": [
+            {
+              "target": "",
+              "targetProperty": "value",
+              "assignment": "equals",
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "tag": "textarea",
+      "config": { "label": "Anything else?" },
+      "meta": { "group": "common", "icon": "textarea", "id": "textarea" },
+      "attrs": { "required": false },
+      "id": "d6d68d27-6327-40f2-84d9-ff8c8d73a978"
+    },
+    "dfeada4c-ac60-4996-816c-bbdd10b3a49d": {
+      "conditions": [
+        {
+          "if": [
+            {
+              "source": "",
+              "sourceProperty": "value",
+              "comparison": "equals",
+              "target": "",
+              "targetProperty": "value"
+            }
+          ],
+          "then": [
+            {
+              "target": "",
+              "targetProperty": "value",
+              "assignment": "equals",
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "tag": "button",
+      "attrs": {
+        "className": [
+          { "label": "grouped", "value": "f-btn-group" },
+          { "label": "ungrouped", "value": "f-field-group" }
+        ]
+      },
+      "config": { "label": "Button", "hideLabel": true },
+      "meta": { "group": "common", "icon": "button", "id": "button" },
+      "options": [
+        {
+          "label": "Submit",
+          "type": [
+            { "label": "button", "type": "button" },
+            { "label": "submit", "type": "submit" },
+            { "label": "reset", "type": "reset" }
+          ],
+          "className": [
+            { "label": "default", "value": "", "selected": true },
+            { "label": "primary", "value": "primary" },
+            { "label": "danger", "value": "error" },
+            { "label": "success", "value": "success" },
+            { "label": "warning", "value": "warning" }
+          ]
+        }
+      ],
+      "id": "dfeada4c-ac60-4996-816c-bbdd10b3a49d"
+    }
+  }
+}
